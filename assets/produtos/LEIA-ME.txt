@@ -1,0 +1,17 @@
+Coloque as fotos dos produtos nesta pasta usando exatamente estes nomes:
+
+caixas-papelao.jpg
+chapas-papelao.jpg
+papelao-ondulado.jpg
+caixas-pizza.jpg
+caixas-bolo-salgados.jpg
+caixa-arquivo.jpg
+caixas-sedex.jpg
+embalagens-personalizadas.jpg
+papel-capa-miolo.jpg
+
+Formato recomendado:
+- JPG, PNG ou WEBP
+- 1200x800 px
+- fundo claro
+- produto bem centralizado
