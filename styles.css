@@ -182,44 +182,67 @@ textarea {
   position: relative;
   padding: 90px 0 74px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 82% 12%, rgba(158, 31, 42, 0.14), transparent 32%),
-    radial-gradient(circle at 14% 22%, rgba(37, 38, 83, 0.14), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%);
+  background: #f7f8fb;
+}
+
+.hero-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1s ease, transform 7s ease;
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(247, 248, 251, 0.96) 0%,
+      rgba(247, 248, 251, 0.88) 42%,
+      rgba(247, 248, 251, 0.74) 100%
+    ),
+    radial-gradient(circle at 82% 12%, rgba(158, 31, 42, 0.18), transparent 32%),
+    radial-gradient(circle at 14% 22%, rgba(37, 38, 83, 0.14), transparent 28%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background-image:
     linear-gradient(rgba(37, 38, 83, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(37, 38, 83, 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(180deg, #000, transparent 76%);
+  pointer-events: none;
 }
 
 .hero-grid {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1.12fr 0.88fr;
   align-items: center;
   gap: 60px;
-}
-
-.label {
-  display: inline-flex;
-  width: fit-content;
-  padding: 8px 12px;
-  border: 1px solid rgba(214, 27, 42, 0.16);
-  border-radius: 999px;
-  background: rgba(214, 27, 42, 0.07);
-  color: var(--red);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .label-light {

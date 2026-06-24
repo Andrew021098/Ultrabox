@@ -81,15 +81,6 @@ const products = [
     category: "Papel",
     description: "Papéis para produção, reforço, fabricação e composição de embalagens.",
     tags: ["Gramaturas", "Indústria", "Produção"]
-  },
-  {
-    id: 10,
-    code: "UB 10",
-    image: "assets/produtos/outro.jpg",
-    name: "Outro Produto",
-    category: "Papelão",
-    description: "Outros produtos de papelão.",
-    tags: ["Gramaturas", "Indústria", "Produção"]
   }
 ];
 
@@ -292,5 +283,20 @@ function bindEvents() {
     });
   });
 }
+
+const heroSlides = document.querySelectorAll(".hero-bg-slide");
+let currentHeroSlide = 0;
+
+function changeHeroSlide() {
+  if (!heroSlides.length) return;
+
+  heroSlides[currentHeroSlide].classList.remove("active");
+
+  currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+
+  heroSlides[currentHeroSlide].classList.add("active");
+}
+
+setInterval(changeHeroSlide, 5000);
 
 init();
